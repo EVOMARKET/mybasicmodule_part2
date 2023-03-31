@@ -11,6 +11,7 @@ class CommentController extends FrameworkBundleAdminController
     public function indexAction()
     {
        $form = $this->createForm(CommentType::class);
+       
 
       return $this ->render(
         "@Modules/mybasicmodule/views/templates/admin/comment.html.twig",
