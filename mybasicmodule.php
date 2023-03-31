@@ -268,5 +268,5 @@ class MyBasicModule extends Module implements WidgetInterface
                 ]
                 ];              
             }
-
+/**************koniec lekcji 42************ */
 }
