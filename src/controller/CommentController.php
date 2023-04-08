@@ -6,6 +6,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Mybasicmodule\Controller\Form\CommentType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use PrestaShopBundle\Controller\Admin\FrameworkBundleAdminController;
+//use Symfony\Component\BrowserKit\Response;
+use Symfony\Component\HttpFoundation\Response;
+
 
 class CommentController extends FrameworkBundleAdminController
 {
@@ -41,4 +44,20 @@ class CommentController extends FrameworkBundleAdminController
       ]
     );    
     }
+
+   public function listAction()
+   {
+    //$em =$this->getDoctrine()->getRepository(CommentTest::class)->findAll();
+    //dump($em);
+    $em =$this->getDoctrine()->getManager();
+    $data = $em-> getRepository(CommentTest::class)->findAll();
+    //$form = $this ->createForm(CommentType::class, $data) ;
+    return $this ->render(
+      "@Modules/mybasicmodule/views/templates/admin/listing.html.twig",
+    [
+      "data"=> $data,
+     
+    ]
+  );    
+   }
 }
