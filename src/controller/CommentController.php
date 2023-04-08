@@ -25,6 +25,9 @@ class CommentController extends FrameworkBundleAdminController
 
           $em->persist($commantTest);
           $em->flush();
+          $this->addFlash("success", "The form has been submitted correctly");
+          $this->addFlash("error", "ERROR === The form has been submitted correctly");
+          $this->addFlash("success", "500 === The form has been submitted correctlyy");
 
        // dump($data = $form->getData());
     
