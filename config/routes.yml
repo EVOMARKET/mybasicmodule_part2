@@ -1,8 +1,9 @@
 blog:
-    path: /blog
-    # the controller value has the format 'controller_class::method_name'    
+    path: /blog   
     controller: Mybasicmodule\Controller\CommentController::indexAction 
 blog_list:
     path: /blog/list
-   
     controller: Mybasicmodule\Controller\CommentController::listAction 
+blog_update:
+    path: /blog/update/{id}
+    controller: Mybasicmodule\Controller\CommentController::updateAction  
