@@ -3,11 +3,11 @@ namespace Mybasicmodule\Controller;
 
 use Mybasicmodule\Entity\CommentTest;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Mybasicmodule\Controller\Form\CommentType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use PrestaShopBundle\Controller\Admin\FrameworkBundleAdminController;
 //use Symfony\Component\BrowserKit\Response;
-use Symfony\Component\HttpFoundation\Response;
 
 
 class CommentController extends FrameworkBundleAdminController
@@ -82,14 +82,12 @@ class CommentController extends FrameworkBundleAdminController
 
           //$em->persist($commantTest);
           $em->flush();
-          $this->addFlash("success", "The form has been submitted correctly");
+          $this->addFlash("success", "The form has been submitted correctly");    
           
-
        // dump($data = $form->getData());
     
       }
-
-
+      
     return $this ->render(
       "@Modules/mybasicmodule/views/templates/admin/update.html.twig",
     [
@@ -98,4 +96,16 @@ class CommentController extends FrameworkBundleAdminController
     ]
   );    
    }
+   //public function deleteAction(Task $id)*******************************/
+   public function deleteAction(CommentTest $id) 
+   {
+   $em =$this->getDoctrine()->getManager();
+   
+    $em->remove($id);
+    $em->flush();
+    return $this->redirectToRoute('blog_list');
+   
+
+   }
+
 }

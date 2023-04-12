@@ -1,8 +1,10 @@
 {% extends "PrestaShopBundle:Admin:layout.html.twig" %}
 {% block content %}
-
+Aktualizacja
 {{form_start(form)}}
 
 {{form_end(form)}}
+
+<a href={{path("blog")}}type="button" class="btn btn-outline-primary">POWRÓT</a>
 
 {% endblock %}

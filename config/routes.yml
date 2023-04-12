@@ -7,3 +7,6 @@ blog_list:
 blog_update:
     path: /blog/update/{id}
     controller: Mybasicmodule\Controller\CommentController::updateAction  
+blog_delete:
+    path: /blog/delete/{id}
+    controller: Mybasicmodule\Controller\CommentController::deleteAction  

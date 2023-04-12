@@ -16,9 +16,11 @@ Moja lista
       <th scope="row">{{comment.id}}</th>
       <td>{{comment.name}}</td>
       <td class="active">{{comment.description}}</td>
+      <td>{{comment.price}}</td>
       <td>
-      <button ctype="button" class="btn btn-outline-primary">Delete </button> 
+      <a href={{path("blog_delete",{id:comment.id})}} type="button" class="btn btn-outline-primary">Delete </a> 
       <a href={{path("blog_update",{id:comment.id})}}type="button" class="btn btn-outline-primary">Update</a>
+      <a href={{path("blog")}}type="button" class="btn btn-outline-primary">Dodaj</a>
       </td>
     </tr>
   {% endfor %}
